@@ -1,0 +1,32 @@
+@(fragments: List[ca.usask.cs.srlab.simcad.model.CloneFragment], groups: Map[String, Integer])
+
+
+@main("Fragment List") {
+	<div id='d3' style="position:absolute; top:0px; left:0px; z-index:3; pointer-events: none">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	
+	<h2>Fragments (@fragments.size())</h2>
+	
+	
+	<ul>
+		@for((key, value) <- groups) {
+			<li>@key (@value)</li>
+		}
+		
+	</ul>
+	
+	 
+	@for(fragment <- fragments) {
+		
+		<div class="row">
+	  		<div class="col-xs-6">
+	  			@fragment.getFileName() from line @fragment.getFromLine() to line @fragment.getToLine()
+	  			<pre class="prettyprint linenums:@fragment.getFromLine()">@fragment.getOriginalCodeBlock()</pre>
+	  		</div>
+		</div>
+		
+	}
+} {
+
+}

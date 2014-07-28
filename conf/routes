@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+GET     /detail                     controllers.Application.detail()
+GET     /detailC2M                  controllers.Application.detailC2M()
+GET     /fragments/cobol            controllers.Application.cobolFragments()
+GET     /fragments/macro            controllers.Application.macroFragments()
+GET     /statistics                 controllers.Application.statistics()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

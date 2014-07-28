@@ -1,0 +1,88 @@
+@(clone: Clone)
+
+@main("Macro 2 Cobol") {
+	<div id='d3' style="position:absolute; top:0px; left:0px; z-index:3; pointer-events: none">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	
+	<h2>Macro to Cobol View</h2>
+	
+	<p>Found @clone.numberofMacroClones() macro code clones in @clone.numberOfMacroCloneGroups() clone groups.</p>
+	<p>@clone.unmappedMacroFragments().size() macro clones could not be mapped to any Cobol fragment, i.e., their were not executed.</p>
+	<p>@clone.nonCloneFragments().size() of all @clone.mappedCobolFragments().size() mapped Cobol fragments are not identified as clones</p>
+	
+	<p>
+	@defining(clone.macroGroupsWithDifferentMappedGroups()) { groups =>
+	
+		@if(groups.isEmpty()) {
+			No macro clone groups have mappings to different Cobol clone groups.
+		} else {
+			@if(groups.size() > 1){Groups} else {Group}
+			@for((group, index) <- groups.zipWithIndex) {
+				@if(index == groups.size() - 1) { and } @group.getGroupId(), 
+			}
+			(@groups.size() total) have mapped Cobol clones with different clone groups.
+		}
+	}
+	</p>
+	
+	<p>
+	@defining(clone.mappedCobolFragmentToMacroGroups()) { groups =>
+		@if(groups.isEmpty()) {
+			No two Cobol clones from a single group are mapped by different macro groups.
+		} else {
+			@for((key, value) <- groups) {
+				@if(value.size() > 1) {
+					Cobol clone group @key.getGroupId() was mapped by @value.size() different macro clones.
+				}
+			}
+		}
+	}
+	</p>
+
+	
+	
+	@for(cloneGroup <- clone.getMacroClones()) {
+	
+		<h3>Clone Group @cloneGroup.getGroupId()</h3>
+		
+		@for(cloneFragment <- cloneGroup.getCloneFragments()) {			
+			<div class="row">
+		  		<div class="col-xs-5">
+		  			@cloneFragment.getFileName()
+		  			<pre id="macro" class="prettyprint linenums:@cloneFragment.startLine()">@cloneFragment.getContent()</pre>
+		  		</div>
+		  		<div class="col-xs-7">
+		  			@if(clone.macroFragmentToPreCloneCobolFragment.containsKey(cloneFragment)) {
+		  				@for(cobolFragment <- clone.macroFragmentToPreCloneCobolFragment.get(cloneFragment)) {
+		  				 	&nbsp;
+		  					<pre class="
+		  					@if(clone.cobolFragmentToDetectedClone.containsKey(cobolFragment)) {
+								@defining(clone.cobolFragmentToDetectedClone.get(cobolFragment)) { cobolClone =>
+									cobol@cobolClone.getFragmentId()
+								}
+							}
+		  					prettyprint linenums:@cobolFragment.getFromLine()">@cobolFragment.getOriginalCodeBlock()</pre>
+		  				} 
+		  			}
+		  		</div>
+			</div>
+		}
+	}
+} {
+
+@for(cloneGroup <- clone.getMacroClones()) {
+	@for(cloneFragment <- cloneGroup.getCloneFragments()) {		
+		@if(clone.macroFragmentToPreCloneCobolFragment.containsKey(cloneFragment)) {
+			@for(cobolFragment <- clone.macroFragmentToPreCloneCobolFragment.get(cloneFragment)) {
+				@if(clone.cobolFragmentToDetectedClone.containsKey(cobolFragment)) {
+					@defining(clone.cobolFragmentToDetectedClone.get(cobolFragment)) { cobolClone =>
+						highlight(".cobol@cobolClone.getFragmentId()", 1, @{cobolClone.endLine() - cobolClone.startLine() + 1}, @cobolClone.getGroupId());
+					}
+				}
+			} 
+		}
+	}
+}
+
+}

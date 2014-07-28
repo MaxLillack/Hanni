@@ -1,0 +1,37 @@
+@(clone: Clone)
+
+
+@main("Index") {
+	<div id='d3' style="position:absolute; top:0px; left:0px; z-index:3; pointer-events: none">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	<div class="row">
+		<div class="col-xs-5">
+			@for((fileName, macroSource) <- clone.getMacroSources())	{
+				@fileName
+				<pre class="prettyprint linenums">@macroSource</pre>
+			}
+	  	</div>
+	  	<div class="col-xs-7">
+	  		@for((fileName, source) <- clone.getCobolSources())	{
+	  			<pre class="prettyprint linenums">@source</pre>
+	  		}
+	  	</div>
+	</div>
+} {
+		@for(cloneGroup <- clone.getMacroClones()) {
+			console.log("clone group @cloneGroup.getGroupId()");
+			@for(cloneFragment <- cloneGroup.getCloneFragments()) {
+				//console.log("Fragment from @cloneFragment.startLine() to @cloneFragment.endLine()");
+				//highlight("#macro", @cloneFragment.startLine(), @cloneFragment.endLine(), @cloneGroup.getGroupId());
+			}
+		}
+		
+		@for(cloneGroup <- clone.getCobolClones()) {
+			console.log("clone group @cloneGroup.getGroupId()");
+			@for(cloneFragment <- cloneGroup.getCloneFragments()) {
+				//console.log("Fragment from @cloneFragment.startLine() to @cloneFragment.endLine()");
+				//highlight("#cobol", @cloneFragment.startLine(), @cloneFragment.endLine(), @cloneGroup.getGroupId());
+			}
+		}
+}

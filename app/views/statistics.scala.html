@@ -1,0 +1,81 @@
+@(clone: Clone)
+
+@import java.math.BigInteger; var totalMacro=0
+@import java.math.BigInteger; var totalMacroLines=0
+@import java.math.BigInteger; var totalMacroFragments=0
+@import java.math.BigInteger; var totalMacroClones=0
+
+@import java.math.BigInteger; var totalCobol=0
+@import java.math.BigInteger; var totalCobolLines=0
+@import java.math.BigInteger; var totalCobolFragments=0
+@import java.math.BigInteger; var totalCobolClones=0
+
+@main("Statistics") {
+	<div class="row">
+		<div class="col-xs-7">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Macro</th>
+						<th>Macro Lines</th>
+						<th>Fragments</th>
+						<th>Avg. Fragment Size</th>
+						<th>Clones</th>
+					</tr>
+				</thead>
+				<tbody>
+				@for(m <- clone.getMacroStatistics()) {
+					<tr>
+						<td>@m.name</td> @(totalMacro+=1)
+						<td>@m.macroLines</td> @(totalMacroLines+=m.macroLines)
+						<td>@m.fragmentCount</td> @(totalMacroFragments+=m.fragmentCount)
+						<td>@m.avgFragmentSize</td>
+						<td>@m.cloneCount</td> @(totalMacroClones+=m.cloneCount)
+					</tr>
+				}
+				<tr class="success">
+					<td>Total (@totalMacro)</td>
+					<td>@totalMacroLines</td>
+					<td>@totalMacroFragments</td>
+					<td></td>
+					<td>@totalMacroClones</td>
+				</tr>
+				</tbody>
+			</table>
+			
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Cobol</th>
+						<th>Cobol Lines</th>
+						<th>Fragments</th>
+						<th>Avg. Fragment Size</th>
+						<th>Clones</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				@for(m <- clone.getCobolStatistics()) {
+					<tr>
+						<td>@m.name</td> @(totalCobol+=1)
+						<td>@m.macroLines</td> @(totalCobolLines+=m.macroLines)
+						<td>@m.fragmentCount</td> @(totalCobolFragments+=m.fragmentCount)
+						<td>@m.avgFragmentSize</td>
+						<td>@m.cloneCount</td> @(totalCobolClones+=m.cloneCount)
+					</tr>
+				}
+				
+				<tr class="success">
+					<td>Total (@totalCobol)</td>
+					<td>@totalCobolLines</td>
+					<td>@totalCobolFragments</td>
+					<td></td>
+					<td>@totalCobolClones</td>
+				</tr>
+				</tbody>
+			</table>
+	  	</div>
+	</div>
+} {
+
+}

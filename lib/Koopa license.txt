@@ -1,0 +1,5 @@
+http://koopa.sourceforge.net/
+
+Koopa is offered under a BSD licensing scheme.
+http://opensource.org/licenses/bsd-license.php
+

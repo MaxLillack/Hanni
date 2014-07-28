@@ -1,0 +1,55 @@
+@(clone: Clone)
+
+@main("Cobol2Macro") {
+	<div id='d3' style="position:absolute; top:0px; left:0px; z-index:3; pointer-events: none">
+		<canvas id="myCanvas"></canvas>
+	</div>
+	
+	<h2>Cobol to Macro View</h2>
+	
+	@clone.potentialType4Clones().size() macro fragements, which create Cobol clones, are not identified as clones
+	and thus are potential type-4 macro clones.
+	<ul>
+	@for(type4Clone <- clone.potentialType4Clones()) {
+		<li>@type4Clone.getFileName() (@type4Clone.getFromLine() - @type4Clone.getToLine())</li>
+	}
+	</ul>
+	 
+	@for(cloneGroup <- clone.getCobolClones()) {
+	
+		<h3>Clone Group @cloneGroup.getGroupId()</h3>
+		
+		@for(cloneFragment <- cloneGroup.getCloneFragments()) {			
+			<div class="row">
+		  		<div class="col-xs-5">
+		  			@cloneFragment.getFileName()
+		  			<pre class="prettyprint linenums:@cloneFragment.startLine()">@cloneFragment.getContent()</pre>
+		  		</div>
+		  		<div class="col-xs-7">
+		  			@if(clone.cobolCloneToMacroCode.containsKey(cloneFragment)) {
+		  				@defining(clone.cobolCloneToMacroCode.get(cloneFragment)) { macroFragment =>
+		  					@macroFragment.getFileName()
+		  					<pre class="
+		  					@if(clone.macroFragmentToCloneFragment.containsKey(macroFragment)) { cobol@clone.macroFragmentToCloneFragment.get(macroFragment).getFragmentId()  }
+		  					prettyprint linenums:@macroFragment.getFromLine()">@macroFragment.getOriginalCodeBlock()</pre>
+		  				} 
+		  			}
+		  		</div>
+			</div>
+		}
+	}
+} {
+	@for(cloneGroup <- clone.getCobolClones()) {
+		@for(cloneFragment <- cloneGroup.getCloneFragments()) {	
+			@defining(clone.cobolCloneToMacroCode.get(cloneFragment)) { macroFragment =>
+			
+				@if(clone.macroFragmentToCloneFragment.containsKey(macroFragment)) {
+					@defining(clone.macroFragmentToCloneFragment.get(macroFragment)) { cloneFragment =>
+						highlight('.cobol@cloneFragment.getFragmentId()', 1,  @{cloneFragment.endLine() - cloneFragment.startLine() + 1}, @cloneFragment.getGroupId());
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,111 @@
+@(title: String)(content: Html)(script: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hanni: @title</title>
+    <style type="text/css">
+		li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 { list-style-type: decimal !important }
+		.highlightLine { background-color:yellow !important; }
+		.highlightLine1 { background-color: rgba(100,0,100,0.4)  !important; }
+		.highlightLine1a { background-color: rgba(100,0,100,0.7)  !important; }
+		
+		.highlightLine2 { background-color: rgba(25,100,0,0.4)  !important; }
+		.highlightLine2a { background-color: rgba(25,100,0,0.7)  !important; }
+		
+		.highlightLine3 { background-color: rgba(255,0,0,0.4)  !important; }
+		.highlightLine3a { background-color: rgba(255,0,0,0.7)  !important; }
+		
+		.highlightLine4 { background-color: rgba(118,108,143,0.4)  !important; }
+		.highlightLine4a { background-color: rgba(118,108,143,0.7)  !important; }
+		
+		.highlightLine5 { background-color: rgba(89,42,199,0.4)  !important; }
+		.highlightLine5a { background-color: rgba(89,42,199,0.7)  !important; }
+		
+		.highlightLine6 { background-color: rgba(155,179,255,0.4)  !important; }
+		.highlightLine6a { background-color: rgba(155,179,255,0.7)  !important; }
+		
+		.highlightLine7 { background-color: rgba(255,239,213,0.4)  !important; }
+		.highlightLine7a { background-color: rgba(255,239,213,0.7)  !important; }
+
+		.highlightLine8 { background-color: rgba(204,151,98,0.4)  !important; }
+		.highlightLine8a { background-color: rgba(204,151,98,0.7)  !important; }		
+		
+		.highlightLine9 { background-color: rgba(255,206,50,0.4)  !important; }
+		.highlightLine9a { background-color: rgba(255,206,50,0.7)  !important; }	
+		
+		.highlightLine10 { background-color: rgba(68,255,165,0.4)  !important; }
+		.highlightLine10a { background-color: rgba(68,255,165,0.7)  !important; }	
+		
+		.highlightLine11 { background-color: rgba(255,70,61,0.4)  !important; }
+		.highlightLine11a { background-color: rgba(255,70,61,0.7)  !important; }	
+		
+		.highlightLine12 { background-color: rgba(41,81,103,0.4)  !important; }
+		.highlightLine12a { background-color: rgba(41,81,103,0.7)  !important; }	
+		
+		.highlightLine13 { background-color: rgba(43,42,91,0.4)  !important; }
+		.highlightLine13a { background-color: rgba(149,86,166,0.7)  !important; }	
+		
+		.highlightLine14 { background-color: rgba(243,109,142,0.4)  !important; }
+		.highlightLine14a { background-color: rgba(243,109,142,0.7)  !important; }	
+		
+		.highlightLine15 { background-color: rgba(244,218,136,0.4)  !important; }
+		.highlightLine15a { background-color: rgba(244,218,136,0.7)  !important; }	
+		
+		.highlightLine16 { background-color: rgba(34,193,190,0.4)  !important; }
+		.highlightLine16a { background-color: rgba(34,193,190,0.7)  !important; }	
+		
+	</style>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 style="z-index:4"><a href="/">Hanni</a> : <a href="/fragments/cobol">Cobol Fragments</a> : <a href="/fragments/macro">Macro Fragments</a> : <a href="/detail">Macro2Cobol</a> : <a href="/detailC2M">Cobol2Macro</a> : <a href="/statistics">Statistics</a></h1>
+	
+	@content
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+	
+	
+	<script type="text/javascript">		
+	
+		prettyPrint();	
+		
+		var highlight = function(elementId, startLine, endLine, groupId)
+		{
+			for(var i = startLine; i <= endLine; i++)
+			{
+			    $(elementId).each(function(index) {
+					if(i == startLine) {
+						$(this).find('ol > li').eq(i - 1).addClass("highlightLine" + groupId + "a");
+					} else {
+						$(this).find('ol > li').eq(i - 1).addClass("highlightLine" + groupId);
+					}
+				});
+			}
+		}
+		
+		@script
+	</script>
+  </body>
+</html>
