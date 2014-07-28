@@ -2,6 +2,10 @@ Hanni
 =====
 Hanni uses SimLib (https://github.com/suddin/ca.usask.cs.srlab.simLib) to perform code clone detection in macro-based generators and generated Cobol files. Hanni creates a mapping between these clones to infer additional information.
 
+## Screenshot
+
+![Feature KEYBOARD](Screenshot.png)
+
 ## Setup
 
 
