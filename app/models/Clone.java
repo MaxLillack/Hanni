@@ -78,7 +78,7 @@ public class Clone {
 	private DetectionSettings detectionSettings_type123_group = new DetectionSettings(
 			SimCadConstants.LANGUAGE_JAVA,
 			CloneFragment.CLONE_GRANULARITY_FUNCTION,
-			SimCadConstants.CLONE_SET_TYPE_PAIR,
+			SimCadConstants.CLONE_SET_TYPE_GROUP,
 			SimCadConstants.SOURCE_TRANSFORMATION_APPROACH_GENEROUS, false,
 			CloneSet.CLONE_TYPE_123);
 	private DetectionSettings selected = detectionSettings_type123_group;
