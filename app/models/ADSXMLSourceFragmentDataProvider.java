@@ -80,6 +80,7 @@ public class ADSXMLSourceFragmentDataProvider extends AbstractFragmentDataProvid
 		@Override
 		public List<CloneFragment> call() throws Exception {
 			List<CloneFragment> result = buildFragments(fileName, sourceList, originalSourceLines, index);
+			transformedContents.putAll(getTransformedContents());
 			return result;
 		}
 		
@@ -196,7 +197,7 @@ public class ADSXMLSourceFragmentDataProvider extends AbstractFragmentDataProvid
 				transformedContent = StringUtils.join(transformedContentLines, "\n");
 				
 				allContent.append(content);
-				allTransformedContent.append(transformedContent);
+				allTransformedContent.append(transformedContent + "\n");
 			}
 			
 			
@@ -260,7 +261,7 @@ public class ADSXMLSourceFragmentDataProvider extends AbstractFragmentDataProvid
 			
 			NodeList toplevelElements = root.getElementsByTagName("rf.commands").item(0).getChildNodes();
 			
-			List<FragmentTask> tasks = new ArrayList<FragmentTask>();
+			List<Future<List<CloneFragment>>> tasks = new ArrayList<>();
 			
 			List<Element> nodes = new LinkedList<Element>();
 			for(int i = 0; i < toplevelElements.getLength(); i++)
@@ -287,10 +288,12 @@ public class ADSXMLSourceFragmentDataProvider extends AbstractFragmentDataProvid
 					{
 						if(!nodes.isEmpty()) {
 //							cloneFragmentList.addAll(buildFragments(dataSource, nodes, originalSourceLines, index++));
-							tasks.add(new FragmentTask(dataSource, nodes, originalSourceLines, index++, transformedContents));
+							FragmentTask task = new FragmentTask(dataSource, nodes, originalSourceLines, index++, transformedContents);
+							tasks.add(executor.submit(task));
 						}
 //						cloneFragmentList.addAll(buildFragments(dataSource, Collections.singletonList(element), originalSourceLines, index++));
-						tasks.add(new FragmentTask(dataSource, Collections.singletonList(element), originalSourceLines, index++, transformedContents));
+						FragmentTask task = new FragmentTask(dataSource, Collections.singletonList(element), originalSourceLines, index++, transformedContents);
+						tasks.add(executor.submit(task));
 						nodes = new LinkedList<Element>();
 					} else {
 						// Append to fragment
@@ -302,14 +305,15 @@ public class ADSXMLSourceFragmentDataProvider extends AbstractFragmentDataProvid
 			if(!nodes.isEmpty())
 			{
 //				cloneFragmentList.addAll(buildFragments(dataSource, nodes, originalSourceLines, index++));
-				tasks.add(new FragmentTask(dataSource, nodes, originalSourceLines, index++, transformedContents));
+				FragmentTask task = new FragmentTask(dataSource, nodes, originalSourceLines, index++, transformedContents);
+				tasks.add(executor.submit(task));
 			}
 			
-			for(FragmentTask task : tasks)
+			for(Future<List<CloneFragment>> task : tasks)
 			{
-				List<CloneFragment> result = task.call();
+				List<CloneFragment> result = task.get();
 				cloneFragmentList.addAll(result);
-				transformedContents.putAll(task.getTransformedContents());
+//				transformedContents.putAll(task.getTransformedContents());
 			}
 			
 			/*

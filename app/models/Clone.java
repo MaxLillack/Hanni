@@ -18,6 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -491,8 +492,7 @@ public class Clone {
 			String sourceFragmentFile = entry.getValue();
 	
 			XMLMultiSourceFragmentDataProviderConfiguration dataProviderConfig = new XMLMultiSourceFragmentDataProviderConfiguration(
-					sourceFragmentFile, null,
-					"/Volumes/Data/auni_home/test_systems/dnsjava/dnsjava-0-3",
+					sourceFragmentFile, null, null,
 					CloneFragment.CLONE_GRANULARITY_BLOCK);
 	
 			CobolXMLSourceFragmentDataProvider cloneFragmentDataProvider = new CobolXMLSourceFragmentDataProvider(dataProviderConfig, originalSourcePath, start);
@@ -508,32 +508,22 @@ public class Clone {
 		ICloneIndex cloneIndex = new MemoryCloneIndexByGoogleCollection();
 		JoininingFragmentProvider dataProvider = new JoininingFragmentProvider();
 		
-		List<CobolFragmentTask> tasks = new ArrayList<CobolFragmentTask>();
+//		List<CobolFragmentTask> tasks = new ArrayList<>();
+		List<Future<List<CloneFragment>>> tasks = new ArrayList<>();
 		
 		int index = 0;
 		
 		for(Entry<String, String> entry : cobolSources.entrySet()) {
-//			String originalSourcePath = entry.getKey();
-//			String sourceFragmentFile = entry.getValue();
-//	
-//			XMLMultiSourceFragmentDataProviderConfiguration dataProviderConfig = new XMLMultiSourceFragmentDataProviderConfiguration(
-//					sourceFragmentFile, null,
-//					"/Volumes/Data/auni_home/test_systems/dnsjava/dnsjava-0-3",
-//					CloneFragment.CLONE_GRANULARITY_BLOCK);
-//	
-//			IFragmentDataProvider cloneFragmentDataProvider = new CobolXMLSourceFragmentDataProvider(
-//					dataProviderConfig, originalSourcePath);
-//			dataProvider.add(cloneFragmentDataProvider.extractFragments());
-			
-//			Future<List<CloneFragment>> task = executor.submit(new CobolFragmentTask(entry));
-			tasks.add(new CobolFragmentTask(entry, index, transformedCobolFragments));
+			Future<List<CloneFragment>> task = executor.submit(new CobolFragmentTask(entry, index, transformedCobolFragments));
+			tasks.add(task);
+//			tasks.add(new CobolFragmentTask(entry, index, transformedCobolFragments));
 			index += 1000;
 		}
 		
-		for(CobolFragmentTask task : tasks)
+		for(Future<List<CloneFragment>> task : tasks)
 		{
 			try {
-				List<CloneFragment> fragments = task.call();
+				List<CloneFragment> fragments = task.get();
 				dataProvider.add(fragments);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
