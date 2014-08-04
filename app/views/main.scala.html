@@ -88,8 +88,6 @@
 	
 	
 	<script type="text/javascript">		
-	
-		prettyPrint();	
 		
 		var highlight = function(elementId, startLine, endLine, groupId)
 		{
@@ -98,14 +96,24 @@
 			    $(elementId).each(function(index) {
 					if(i == startLine) {
 						$(this).find('ol > li').eq(i - 1).addClass("highlightLine" + groupId + "a");
+						console.log(elementId + "(" + $(this).find('ol').length + "): " + $(this).find('ol > li').eq(i - 1).text() + " --> " + $(this).find('ol > li').eq(i - 1).attr('class'));
+						if($(this).find('ol').length == 0) {
+							console.log($(this).html());
+						}
 					} else {
 						$(this).find('ol > li').eq(i - 1).addClass("highlightLine" + groupId);
 					}
 				});
 			}
+			
 		}
 		
-		@script
+		var afterPrettyPrint = function() {
+			@script
+		}
+		
+		prettyPrint(afterPrettyPrint);	
+
 	</script>
   </body>
 </html>
