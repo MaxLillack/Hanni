@@ -55,7 +55,7 @@
 		  		<div class="col-xs-7">
 		  			@if(clone.macroFragmentToPreCloneCobolFragment.containsKey(cloneFragment)) {
 		  				@for(cobolFragment <- clone.macroFragmentToPreCloneCobolFragment.get(cloneFragment)) {
-		  				 	&nbsp;
+		  				 	@cobolFragment.getFileName()
 		  					<pre class="
 		  					@if(clone.cobolFragmentToDetectedClone.containsKey(cobolFragment)) {
 								@defining(clone.cobolFragmentToDetectedClone.get(cobolFragment)) { cobolClone =>

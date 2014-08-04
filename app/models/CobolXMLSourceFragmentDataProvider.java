@@ -36,6 +36,8 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 	
 	private String originalSourcePath;
 	
+	private HashMap<CloneFragment, String> transformedContents = new HashMap<>();
+	
 	@SuppressWarnings("unused")
 	private CobolXMLSourceFragmentDataProvider(){
 	}
@@ -121,12 +123,13 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 					String transformedContent = content;
 					
 					Element element = (Element) source;					
-					transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x");
-					transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y");
+					transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x", Integer.parseInt(startline));
+					transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y", Integer.parseInt(startline));
 					
 					if(!(CloneFragment.computeActualLineOfCode(content) < minSizeOfGranularity)) {
 						CloneFragment cloneFragment = createNewCloneFragment(file, startline, endline, content, transformedContent, items++);
 						cloneFragmentList.add(cloneFragment);
+						transformedContents.put(cloneFragment, transformedContent);
 					}
 					
 					// Add sub fragments based on macro source
@@ -154,8 +157,8 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 							transformedContent = content;
 							
 							element = (Element) source;					
-							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x");
-							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y");
+							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x", Integer.parseInt(startline));
+							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y", Integer.parseInt(startline));
 							
 							if(!(CloneFragment.computeActualLineOfCode(content) < minSizeOfGranularity)) {
 								CloneFragment cloneFragment = createNewCloneFragment(file, Integer.toString(start), Integer.toString(lineIndex), content, transformedContent, items++);
@@ -185,14 +188,26 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 		return cloneFragmentList;
 	}
 
-	private String replaceValues(String transformedContent, NodeList nodes, String replaceWith) {
+	private String replaceValues(String transformedContent, NodeList nodes, String replaceWith, int lineOffset) {
+		String[] lines = transformedContent.split("\\n");
+		
 		for(int j = 0; j < nodes.getLength(); j++) {
 			Node node = nodes.item(j);
 			String text = node.getTextContent().trim();
-			transformedContent = StringUtils.replace(transformedContent, text, replaceWith);
+			
+			int lineNumber = Integer.parseInt(node.getAttributes().getNamedItem("from-line").getFirstChild().getNodeValue());
+			
+			if((lineNumber - lineOffset) < lines.length) {
+				String line = lines[lineNumber - lineOffset];
+				lines[lineNumber - lineOffset] = StringUtils.replace(line, text, replaceWith);
+			}
 		}
 		
-		return transformedContent;
+		return StringUtils.join(lines, "\n");
+	}
+
+	public HashMap<CloneFragment, String> getTransformedContents() {
+		return transformedContents;
 	}
 
 	//@Override

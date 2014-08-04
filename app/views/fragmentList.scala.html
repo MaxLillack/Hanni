@@ -1,4 +1,4 @@
-@(fragments: List[ca.usask.cs.srlab.simcad.model.CloneFragment], groups: Map[String, Integer])
+@(fragments: List[ca.usask.cs.srlab.simcad.model.CloneFragment], groups: Map[String, Integer], clone: Clone)
 
 
 @main("Fragment List") {
@@ -23,6 +23,10 @@
 	  		<div class="col-xs-6">
 	  			@fragment.getFileName() from line @fragment.getFromLine() to line @fragment.getToLine()
 	  			<pre class="prettyprint linenums:@fragment.getFromLine()">@fragment.getOriginalCodeBlock()</pre>
+	  		</div>
+	  		<div class="col-xs-6">
+	  			@fragment.getFileName() from line @fragment.getFromLine() to line @fragment.getToLine()
+	  			<pre class="prettyprint linenums:@fragment.getFromLine()">@clone.getTransformedCobol(fragment)</pre>
 	  		</div>
 		</div>
 		

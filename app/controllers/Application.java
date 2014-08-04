@@ -77,7 +77,7 @@ public class Application extends Controller {
 			groups.put(key, groups.get(key) + 1);
 		}
     	
-        return ok(fragmentList.render(fragments, groups));
+        return ok(fragmentList.render(fragments, groups, clone));
     }
     
     public static Result cobolFragments() throws Exception {
@@ -111,7 +111,7 @@ public class Application extends Controller {
 			groups.put(key, groups.get(key) + 1);
 		}
 		
-        return ok(fragmentList.render(fragments, groups));
+        return ok(fragmentList.render(fragments, groups, clone));
     }
     
     public static Result statistics() throws Exception {

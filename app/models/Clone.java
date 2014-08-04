@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -88,7 +89,8 @@ public class Clone {
 	
 	private Map<String,String> macroSources;
 	private Map<String,String> cobolSources;
-		
+	
+	private ConcurrentHashMap<CloneFragment, String> transformedCobolFragments = new ConcurrentHashMap<CloneFragment, String>();
 	
 	public Clone() throws Exception {
 		
@@ -475,10 +477,14 @@ public class Clone {
 	{
 		private Entry<String, String> entry;
 		private int start;
-		public CobolFragmentTask(Entry<String, String> entry, int start)
+		private ConcurrentHashMap<CloneFragment, String> transformedContents;
+		
+		
+		public CobolFragmentTask(Entry<String, String> entry, int start, ConcurrentHashMap<CloneFragment, String> transformedContents)
 		{
 			this.entry = entry;
 			this.start = start;
+			this.transformedContents = transformedContents;
 		}
 		
 		
@@ -492,8 +498,10 @@ public class Clone {
 					"/Volumes/Data/auni_home/test_systems/dnsjava/dnsjava-0-3",
 					CloneFragment.CLONE_GRANULARITY_BLOCK);
 	
-			IFragmentDataProvider cloneFragmentDataProvider = new CobolXMLSourceFragmentDataProvider(dataProviderConfig, originalSourcePath, start);
-			return cloneFragmentDataProvider.extractFragments();
+			CobolXMLSourceFragmentDataProvider cloneFragmentDataProvider = new CobolXMLSourceFragmentDataProvider(dataProviderConfig, originalSourcePath, start);
+			List<CloneFragment> fragments = cloneFragmentDataProvider.extractFragments();
+			transformedContents.putAll(cloneFragmentDataProvider.getTransformedContents());
+			return fragments;
 		}
 		
 	
@@ -521,7 +529,7 @@ public class Clone {
 //			dataProvider.add(cloneFragmentDataProvider.extractFragments());
 			
 //			Future<List<CloneFragment>> task = executor.submit(new CobolFragmentTask(entry));
-			tasks.add(new CobolFragmentTask(entry, index));
+			tasks.add(new CobolFragmentTask(entry, index, transformedCobolFragments));
 			index += 1000;
 		}
 		
@@ -548,6 +556,11 @@ public class Clone {
 		return cloneIndex;
 	}
 
+	public String getTransformedCobol(CloneFragment cobolFragment)
+	{
+		return transformedCobolFragments.get(cobolFragment);
+	}
+	
 	private ICloneIndex createADSIndex(Map<String, String> macroSources) {
 		ICloneIndex cloneIndex = new MemoryCloneIndexByGoogleCollection();
 		JoininingFragmentProvider dataProvider = new JoininingFragmentProvider();
@@ -562,10 +575,10 @@ public class Clone {
 					"/Volumes/Data/auni_home/test_systems/dnsjava/dnsjava-0-3",
 					CloneFragment.CLONE_GRANULARITY_BLOCK);
 	
-			IFragmentDataProvider cloneFragmentDataProvider = new ADSXMLSourceFragmentDataProvider(
-					dataProviderConfig, originalSourcePath);
+			ADSXMLSourceFragmentDataProvider cloneFragmentDataProvider = new ADSXMLSourceFragmentDataProvider(dataProviderConfig, originalSourcePath);
 	
 			List<CloneFragment> fragments = cloneFragmentDataProvider.extractFragments();
+			transformedCobolFragments.putAll(cloneFragmentDataProvider.getTransformedContents());
 			dataProvider.add(fragments);
 		}
 		
@@ -686,8 +699,8 @@ public class Clone {
 	}
 
 	public List<CloneFragment> loadCobolFragements() {
-		List<CloneFragment> candidateFragments = new LinkedList<CloneFragment>(
-				cobolIndex.getAllEntries());
+		List<CloneFragment> candidateFragments = new LinkedList<CloneFragment>(cobolIndex.getAllEntries());
+		
 		return candidateFragments;
 	}
 
