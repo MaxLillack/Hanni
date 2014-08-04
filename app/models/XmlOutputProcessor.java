@@ -135,9 +135,7 @@ public class XmlOutputProcessor extends AbstractProcessor {
 			int nFragments = 0;
 		    
 			for(CloneSet cs: inputCloneSets){
-				for(ICloneFragment cloneFragment : cs.getCloneFragments()){
-					nFragments++;
-				}
+				nFragments += cs.getCloneFragments().size();
 			}
 			
 			cloneOutputWriter.println("<clones fragmentType=\""+detectionSettings.getCloneGranularity()+"\" cloneSetType=\""+detectionSettings.getCloneSetType()+"\" nfragments=\""+Integer.toString(nFragments)+"\" ngroups=\""+Integer.toString(inputCloneSets.size())+"\">");

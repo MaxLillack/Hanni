@@ -157,12 +157,13 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 							transformedContent = content;
 							
 							element = (Element) source;					
-							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x", Integer.parseInt(startline));
-							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y", Integer.parseInt(startline));
+							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("cobolWord"), "x", start);
+							transformedContent = replaceValues(transformedContent, element.getElementsByTagName("literal"), "y", start);
 							
 							if(!(CloneFragment.computeActualLineOfCode(content) < minSizeOfGranularity)) {
 								CloneFragment cloneFragment = createNewCloneFragment(file, Integer.toString(start), Integer.toString(lineIndex), content, transformedContent, items++);
 								cloneFragmentList.add(cloneFragment);
+								transformedContents.put(cloneFragment, transformedContent);
 							}
 							// clear StringBuilder
 							sb.setLength(0);
@@ -197,7 +198,7 @@ public class CobolXMLSourceFragmentDataProvider extends AbstractFragmentDataProv
 			
 			int lineNumber = Integer.parseInt(node.getAttributes().getNamedItem("from-line").getFirstChild().getNodeValue());
 			
-			if((lineNumber - lineOffset) < lines.length) {
+			if((lineNumber - lineOffset) < lines.length && (lineNumber - lineOffset) >= 0) {
 				String line = lines[lineNumber - lineOffset];
 				lines[lineNumber - lineOffset] = StringUtils.replace(line, text, replaceWith);
 			}

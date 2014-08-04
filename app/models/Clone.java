@@ -18,7 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -44,7 +43,6 @@ import com.typesafe.config.ConfigFactory;
 
 import ca.usask.cs.srlab.simcad.DetectionSettings;
 import ca.usask.cs.srlab.simcad.SimCadConstants;
-import ca.usask.cs.srlab.simcad.dataprovider.IFragmentDataProvider;
 import ca.usask.cs.srlab.simcad.dataprovider.xml.XMLMultiSourceFragmentDataProviderConfiguration;
 import ca.usask.cs.srlab.simcad.detection.CloneDetector;
 import ca.usask.cs.srlab.simcad.index.ICloneIndex;
@@ -56,8 +54,7 @@ import ca.usask.cs.srlab.simcad.processor.IProcessor;
 import ca.usask.cs.srlab.simcad.processor.ProcessorDisptacher;
 
 public class Clone {
-
-	private String cobolSource;
+	
 	private List<CloneGroup> macroClones;
 	private List<CloneGroup> cobolClones;
 
@@ -588,8 +585,7 @@ public class Clone {
 		return cloneIndex;
 	}
 
-	private CloneFragmentDTO getMacroCloneFragmentDTO(
-			CloneFragment macroFragment) throws Exception {
+	private CloneFragmentDTO getMacroCloneFragmentDTO(CloneFragment macroFragment) throws Exception {
 
 		for (CloneGroup group : macroClones) {
 			for (CloneFragmentDTO fragment : group.getCloneFragments()) {
@@ -673,10 +669,6 @@ public class Clone {
 	
 	public Map<String, String> getCobolSources() throws IOException {
 		return cobolFullSources;
-	}
-
-	public String getCobolSource() throws IOException {
-		return cobolSource;
 	}
 
 	public List<CloneGroup> getMacroClones() {
@@ -787,8 +779,7 @@ public class Clone {
 
 	public Set<CloneGroup> macroGroupsWithDifferentMappedGroups() {
 		Set<CloneGroup> result = new HashSet<>();
-		for (Entry<CloneGroup, Set<CloneGroup>> entry : macroGroupToCobolGroups()
-				.entrySet()) {
+		for (Entry<CloneGroup, Set<CloneGroup>> entry : macroGroupToCobolGroups().entrySet()) {
 			if (entry.getValue().size() > 1) {
 				result.add(entry.getKey());
 			}
@@ -810,25 +801,19 @@ public class Clone {
 		Map<CloneGroup, Set<CloneGroup>> mappedCobolFragmentToMacroGroups = new HashMap<>();
 
 		for (CloneFragment cobolFragment : mappedCobolFragments()) {
-			CloneFragmentDTO cloneFragment = cobolFragmentToDetectedClone
-					.get(cobolFragment);
+			CloneFragmentDTO cloneFragment = cobolFragmentToDetectedClone.get(cobolFragment);
 			if (cloneFragment != null) {
 				CloneGroup cobolGroup = getCobolCloneGroup(cloneFragment);
 				if (cobolGroup != null) {
-					if (!mappedCobolFragmentToMacroGroups
-							.containsKey(cobolGroup)) {
-						mappedCobolFragmentToMacroGroups.put(cobolGroup,
-								new HashSet<CloneGroup>());
+					if (!mappedCobolFragmentToMacroGroups.containsKey(cobolGroup)) {
+						mappedCobolFragmentToMacroGroups.put(cobolGroup, new HashSet<CloneGroup>());
 					}
-					for (Entry<CloneFragmentDTO, List<CloneFragment>> entry : macroFragmentToPreCloneCobolFragment
-							.entrySet()) {
+					for (Entry<CloneFragmentDTO, List<CloneFragment>> entry : macroFragmentToPreCloneCobolFragment.entrySet()) {
 						if (entry.getValue().contains(cobolFragment)) {
 							// find group
 							for (CloneGroup macroCloneGroup : macroClones) {
-								if (macroCloneGroup.getCloneFragments()
-										.contains(entry.getKey())) {
-									mappedCobolFragmentToMacroGroups.get(
-											cobolGroup).add(macroCloneGroup);
+								if (macroCloneGroup.getCloneFragments().contains(entry.getKey())) {
+									mappedCobolFragmentToMacroGroups.get(cobolGroup).add(macroCloneGroup);
 								}
 							}
 						}
