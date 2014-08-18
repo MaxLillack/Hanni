@@ -1,4 +1,4 @@
-@(clone: Clone)
+@(clone: Clone, anonymous: Boolean)
 
 @import java.math.BigInteger; var totalMacro=0
 @import java.math.BigInteger; var totalMacroLines=0
@@ -26,7 +26,7 @@
 				<tbody>
 				@for(m <- clone.getMacroStatistics()) {
 					<tr>
-						<td>@m.name</td> @(totalMacro+=1)
+						<td>@if(anonymous) { Macro@totalMacro } else { @m.name }</td> @(totalMacro+=1)
 						<td>@m.macroLines</td> @(totalMacroLines+=m.macroLines)
 						<td>@m.fragmentCount</td> @(totalMacroFragments+=m.fragmentCount)
 						<td>@m.avgFragmentSize</td>
@@ -57,7 +57,7 @@
 				
 				@for(m <- clone.getCobolStatistics()) {
 					<tr>
-						<td>@m.name</td> @(totalCobol+=1)
+						<td>@if(anonymous) { Cobol@totalCobol } else { @m.name }</td> @(totalCobol+=1)
 						<td>@m.macroLines</td> @(totalCobolLines+=m.macroLines)
 						<td>@m.fragmentCount</td> @(totalCobolFragments+=m.fragmentCount)
 						<td>@m.avgFragmentSize</td>

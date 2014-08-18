@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
+
 import ca.usask.cs.srlab.simcad.model.CloneFragment;
 import models.Clone;
 import play.mvc.*;
@@ -119,7 +122,10 @@ public class Application extends Controller {
     		clone = new Clone();
     	}
     	
-        return ok(statistics.render(clone));
+    	Config config = ConfigFactory.load();
+    	
+    	
+        return ok(statistics.render(clone, config.getBoolean("anonymous")));
     }
     
 }
