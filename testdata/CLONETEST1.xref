@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<MacroXREF lines="137">
+<MacReference name="DCDPR" macroid="--" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">--
+<Reference linenumber="000000" callertype="macro" nestlevel="0" timestamp="201301240933" filets="1364982820000"/>
+</MacReference>
+<MacReference name="CLONETEST1" macroid="00" path="C:\Users\Max\workspace\ADS" scpath="C:\Users\Max\workspace\ADS">00
+<Reference linenumber="000000" callertype="primsource" nestlevel="0" timestamp="201402221423" filets="1406557533000"/>
+<CobLines>107-123</CobLines>
+</MacReference>
+<MacReference name="DCMPRO" macroid="01" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">01
+<Reference linenumber="000002" callertype="primsource" nestlevel="1" timestamp="200905281113" filets="1364982820000"/>
+<CobLines>1-17,93-95,97-100,105,128,132-137</CobLines>
+</MacReference>
+<MacReference name="DCSNAMES" macroid="02" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">02
+<Reference linenumber="000208" callertype="macro" nestlevel="2" timestamp="200303200000" callerrefid="01" filets="1364982820000"/>
+</MacReference>
+<MacReference name="DCMWORK" macroid="03" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">03
+<Reference linenumber="000325" callertype="macro" nestlevel="2" timestamp="200303200000" callerrefid="01" filets="1364982820000"/>
+<CobLines>18-92,102-104</CobLines>
+</MacReference>
+<MacReference name="DCDSP" macroid="--" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">--
+<Reference linenumber="000004" callertype="macro" nestlevel="0" timestamp="200303200000" filets="1364982820000"/>
+</MacReference>
+<MacReference name="DCMPRC" macroid="04" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">04
+<Reference linenumber="000024" callertype="primsource" nestlevel="1" timestamp="200812051150" filets="1364982820000"/>
+<CobLines>96,131</CobLines>
+</MacReference>
+<MacReference name="DCPXDEF-LEN" macroid="05" path="C:\Users\Max\Delta\tgts\MFWIN5\MACRO" scpath="C:\Users\Max\Delta\tgts\MFWIN5\MACRO">05
+<Reference linenumber="000007" callertype="macro" nestlevel="2" timestamp="200812051146" callerrefid="04" filets="1364982820000"/>
+</MacReference>
+<ProcReference name="PR-DELTA" macroid="" path="">
+<CobLines>101,106,124-125,127,130</CobLines>
+</ProcReference>
+<ProcReference name="PR-SCORE" macroid="" path="">
+<CobLines>126,129</CobLines>
+</ProcReference>
+</MacroXREF>

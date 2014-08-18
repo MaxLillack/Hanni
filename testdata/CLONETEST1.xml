@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<InstanceFile>
+<SourceFile>factfile</SourceFile>
+<fr.ads ID="1" POS="999000025 1000025 0 0">
+<sl.fdf_version gen="1"><![CDATA[FDF Version 2012-06-01]]></sl.fdf_version>
+<rf.fileinfo>
+<fr.fileinfo ID="2" POS="999000025 1000001 0 0">
+<sl.info p="0 10 58"><![CDATA[ "cloneTest1.000000", "ads", "", "", "1406557592", "1", ""]]></sl.info>
+</fr.fileinfo>
+</rf.fileinfo>
+<rf.pdl_card>
+<fr.pdl_card ID="3" POS="1000001 1000002 0 0">
+<sl.gen_date p="6"><![CDATA[201402221423]]></sl.gen_date>
+<sl.module_name p="19">TEST</sl.module_name>
+<sl.level p="24"><![CDATA[02]]></sl.level>
+<sl.comment p="27"><![CDATA[Macro]]></sl.comment>
+</fr.pdl_card>
+</rf.pdl_card>
+<rf.commands>
+<fr.ads_processor ID="5" POS="1000002 1000003 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.processor_prog>
+<fr.ads_prog ID="6" POS="1000002 1000003 1 0">
+<sl.prog><![CDATA[PROG-]]></sl.prog>
+<sl.prog_name p="5"><![CDATA[CLONETEST1]]></sl.prog_name>
+</fr.ads_prog>
+</rf.processor_prog>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X45"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X89"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X91"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X93"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X95"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X97"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X99"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X101"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X103"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X105"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X107"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X109"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X111"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X113"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X115"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X117"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X119"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X121"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X123"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X125"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X127"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X129"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X131"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X173"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X187"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X319"/>
+</fr.ads_processor>
+<fr.ads_macro_statement ID="8" POS="1000003 1000004 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.macro_sl_statement>
+<fr.macro_sl ID="9" POS="1000003 1000004 1 0">
+<sl.sl><![CDATA[SL]]></sl.sl>
+<rf.sl_value>
+<fr.line_parameter_fragment ID="10" POS="1000003 1000004 4 0">
+<sl.fragment p="0 0 7"><![CDATA[ P-PROG]]></sl.fragment>
+</fr.line_parameter_fragment>
+</rf.sl_value>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X5"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X55"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X133"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X139"/>
+</fr.macro_sl>
+</rf.macro_sl_statement>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X189"/>
+</fr.ads_macro_statement>
+<fr.ads_processor ID="12" POS="1000004 1000015 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.processor_spp>
+<fr.ads_spp ID="13" POS="1000004 1000015 1 0">
+<sl.spp>SPP</sl.spp>
+<rf.ads_spp>
+<fr.cobol_line_part ID="15" POS="1000005 1000006 1 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="16" POS="1000005 1000006 1 0">
+<sl.fragment p="0 0 6"><![CDATA[TEST1.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X13"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X141"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X199"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X287"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="18" POS="1000006 1000007 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="19" POS="1000006 1000006 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 1 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="20" POS="1000006 1000006 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="21" POS="1000006 1000006 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="22" POS="1000006 1000006 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X231"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X259"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="23" POS="1000006 1000007 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-01.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X15"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X61"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X143"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X201"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X289"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="25" POS="1000007 1000008 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="26" POS="1000007 1000007 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 2 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="27" POS="1000007 1000007 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="28" POS="1000007 1000007 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="29" POS="1000007 1000007 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X233"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X261"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="30" POS="1000007 1000008 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-02.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X17"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X63"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X145"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X203"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X291"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="32" POS="1000008 1000009 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="33" POS="1000008 1000008 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 3 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="34" POS="1000008 1000008 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="35" POS="1000008 1000008 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="36" POS="1000008 1000008 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X235"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X263"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="37" POS="1000008 1000009 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-03.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X19"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X65"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X147"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X205"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X293"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="39" POS="1000009 1000010 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="40" POS="1000009 1000009 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 4 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="41" POS="1000009 1000009 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="42" POS="1000009 1000009 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="43" POS="1000009 1000009 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X237"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X265"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="44" POS="1000009 1000010 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-04.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X21"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X67"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X149"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X207"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X295"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="46" POS="1000010 1000011 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="47" POS="1000010 1000010 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 5 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="48" POS="1000010 1000010 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="49" POS="1000010 1000010 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="50" POS="1000010 1000010 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X239"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X267"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="51" POS="1000010 1000011 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-05.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X23"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X69"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X151"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X209"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X297"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="53" POS="1000011 1000012 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="54" POS="1000011 1000011 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 6 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="55" POS="1000011 1000011 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="56" POS="1000011 1000011 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="57" POS="1000011 1000011 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X241"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X269"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="58" POS="1000011 1000012 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-06.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X25"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X71"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X153"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X211"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X299"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="60" POS="1000012 1000013 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="61" POS="1000012 1000012 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 7 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="62" POS="1000012 1000012 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="63" POS="1000012 1000012 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="64" POS="1000012 1000012 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X243"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X271"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="65" POS="1000012 1000013 25 0">
+<sl.fragment p="0 0 4"><![CDATA[-07.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X27"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X73"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X155"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X213"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X301"/>
+</fr.cobol_line_part>
+</rf.ads_spp>
+<rf.ads_spp_end>
+<fr.ads_processor ID="67" POS="1000013 1000015 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.processor_end>
+<fr.ads_end ID="68" POS="1000013 1000015 1 0">
+<sl.end>END</sl.end>
+</fr.ads_end>
+</rf.processor_end>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X49"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X177"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X193"/>
+</fr.ads_processor>
+</rf.ads_spp_end>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X7"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X135"/>
+</fr.ads_spp>
+</rf.processor_spp>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X47"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X57"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X175"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X191"/>
+</fr.ads_processor>
+<fr.ads_processor ID="70" POS="1000015 1000025 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.processor_spp>
+<fr.ads_spp ID="71" POS="1000015 1000025 1 0">
+<sl.spp>SPP</sl.spp>
+<rf.ads_spp>
+<fr.cobol_line_part ID="73" POS="1000016 1000017 1 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="74" POS="1000016 1000017 1 0">
+<sl.fragment p="0 0 6"><![CDATA[TEST2.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X29"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X157"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X215"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X303"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="76" POS="1000017 1000018 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="77" POS="1000017 1000017 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 1 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="78" POS="1000017 1000017 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="79" POS="1000017 1000017 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="80" POS="1000017 1000017 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X245"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X273"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="81" POS="1000017 1000018 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-01.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X31"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X75"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X159"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X217"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X305"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="83" POS="1000018 1000019 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="84" POS="1000018 1000018 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 2 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="85" POS="1000018 1000018 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="86" POS="1000018 1000018 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="87" POS="1000018 1000018 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X247"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X275"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="88" POS="1000018 1000019 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-02.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X33"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X77"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X161"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X219"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X307"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="90" POS="1000019 1000020 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="91" POS="1000019 1000019 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 3 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="92" POS="1000019 1000019 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="93" POS="1000019 1000019 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="94" POS="1000019 1000019 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X249"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X277"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="95" POS="1000019 1000020 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-03.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X35"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X79"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X163"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X221"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X309"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="97" POS="1000020 1000021 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="98" POS="1000020 1000020 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 4 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="99" POS="1000020 1000020 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="100" POS="1000020 1000020 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="101" POS="1000020 1000020 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X251"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X279"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="102" POS="1000020 1000021 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-04.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X37"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X81"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X165"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X223"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X311"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="104" POS="1000021 1000022 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="105" POS="1000021 1000021 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 5 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="106" POS="1000021 1000021 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="107" POS="1000021 1000021 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="108" POS="1000021 1000021 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X253"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X281"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="109" POS="1000021 1000022 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-05.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X39"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X83"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X167"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X225"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X313"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="111" POS="1000022 1000023 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="112" POS="1000022 1000022 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 6 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="113" POS="1000022 1000022 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="114" POS="1000022 1000022 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="115" POS="1000022 1000022 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X255"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X283"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="116" POS="1000022 1000023 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-06.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X41"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X85"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X169"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X227"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X315"/>
+</fr.cobol_line_part>
+<fr.cobol_line_part ID="118" POS="1000023 1000024 8 0">
+<rf.unclassified_cobol_line>
+<fr.line_fragment ID="119" POS="1000023 1000023 8 22">
+<sl.fragment p="0 0 14"><![CDATA[MOVE 7 TO ABC-]]></sl.fragment>
+</fr.line_fragment>
+<fr.line_fragment ID="120" POS="1000023 1000023 22 25">
+<rf.variable_flag>
+<fr.variable_flag ID="121" POS="1000023 1000023 22 23">
+<sl.var_flag key="var_flag">#</sl.var_flag>
+</fr.variable_flag>
+</rf.variable_flag>
+<rf.variable>
+<fr.macro_parameter ID="122" POS="1000023 1000023 23 25">
+<sl.parameter><![CDATA[S1]]></sl.parameter>
+<usedef IDREF="127" USETYPE="source"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X257"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X285"/>
+</fr.macro_parameter>
+</rf.variable>
+</fr.line_fragment>
+<fr.line_fragment ID="123" POS="1000023 1000024 25 0">
+<sl.fragment p="0 0 5"><![CDATA[2-07.]]></sl.fragment>
+</fr.line_fragment>
+</rf.unclassified_cobol_line>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X43"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X87"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X171"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X229"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X317"/>
+</fr.cobol_line_part>
+</rf.ads_spp>
+<rf.ads_spp_end>
+<fr.ads_processor ID="125" POS="1000024 1000025 0 0">
+<sl.ads_start_flag key="start_flag">.</sl.ads_start_flag>
+<rf.processor_end>
+<fr.ads_end ID="126" POS="1000024 1000025 1 0">
+<sl.end>END</sl.end>
+</fr.ads_end>
+</rf.processor_end>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X53"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X181"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X197"/>
+</fr.ads_processor>
+</rf.ads_spp_end>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X9"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X11"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X137"/>
+</fr.ads_spp>
+</rf.processor_spp>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X51"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X59"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X179"/>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X195"/>
+</fr.ads_processor>
+</rf.commands>
+<FactReference ModelIDRef="94IId7TE9X" FactIDRef="94I7b7TE9X3"/>
+</fr.ads>
+<maxID>127</maxID>
+<usedparam>
+<parameter ID="127" type="sys">S1
+<defuse IDREF="22" USETYPE="source"/>
+<defuse IDREF="29" USETYPE="source"/>
+<defuse IDREF="36" USETYPE="source"/>
+<defuse IDREF="43" USETYPE="source"/>
+<defuse IDREF="50" USETYPE="source"/>
+<defuse IDREF="57" USETYPE="source"/>
+<defuse IDREF="64" USETYPE="source"/>
+<defuse IDREF="80" USETYPE="source"/>
+<defuse IDREF="87" USETYPE="source"/>
+<defuse IDREF="94" USETYPE="source"/>
+<defuse IDREF="101" USETYPE="source"/>
+<defuse IDREF="108" USETYPE="source"/>
+<defuse IDREF="115" USETYPE="source"/>
+<defuse IDREF="122" USETYPE="source"/>
+</parameter>
+<used IDREF="22" USETYPE="source"/>
+<used IDREF="29" USETYPE="source"/>
+<used IDREF="36" USETYPE="source"/>
+<used IDREF="43" USETYPE="source"/>
+<used IDREF="50" USETYPE="source"/>
+<used IDREF="57" USETYPE="source"/>
+<used IDREF="64" USETYPE="source"/>
+<used IDREF="80" USETYPE="source"/>
+<used IDREF="87" USETYPE="source"/>
+<used IDREF="94" USETYPE="source"/>
+<used IDREF="101" USETYPE="source"/>
+<used IDREF="108" USETYPE="source"/>
+<used IDREF="115" USETYPE="source"/>
+<used IDREF="122" USETYPE="source"/>
+</usedparam>
+</InstanceFile>
