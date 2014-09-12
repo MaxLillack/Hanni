@@ -16,3 +16,7 @@ Hanni uses SimLib (https://github.com/suddin/ca.usask.cs.srlab.simLib) to perfor
 * Hanni needs the play! framework (http://www.playframework.com/)
 
 * Start Hanni with `activator run` and than open a browser and navigate to http://localhost:9000
+
+## Acknowledgements
+
+* Hanni is supported by BMBF grant 01IS12043A/B.
